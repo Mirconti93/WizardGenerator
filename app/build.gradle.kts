@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -46,6 +48,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
+    // Jetpack Compose Integration
+    implementation("androidx.navigation:navigation-compose:2.7.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -67,8 +71,8 @@ dependencies {
     // Integration with observables
     implementation("androidx.compose.runtime:runtime-livedata:1.4.2")
     implementation("androidx.compose.runtime:runtime-rxjava2:1.4.2")
-    //implementation "androidx.compose.material3:material3:1.0.1"
-    //implementation "androidx.compose.material3:material3-window-size-class:1.0.1"
+    implementation("androidx.compose.material3:material3:1.0.1")
+    implementation("androidx.compose.material3:material3-window-size-class:1.0.1")
     // UI Tests
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.2")
 
@@ -82,4 +86,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.11.3")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.3")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.1")
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 }
