@@ -1,8 +1,14 @@
 package com.gridspertise.ami.surftutor.data.models
 
+import com.example.wizardgenerator.commons.Constants
+import com.example.wizardgenerator.commons.Constants.Companion.PARAM_CONDITION
+import com.example.wizardgenerator.commons.Constants.Companion.PARAM_PARAMETERS
+import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 
+
 data class MapStateModel(
+    override val id: String,
     override val type: String,
     // una lista di MapChoiceModel, il modello che rappresenta una delle ve vengono selezionate alla verifica della condizione definita nel parametro condition.
     val choices: List<MapChoiceModel>?,
@@ -39,5 +45,17 @@ data class MapStateModel(
 
     override fun stayOnScreen(): Boolean {
         return true
+    }
+
+    override fun toJsonObject(): JsonObject {
+        val jsonObject = JsonObject()
+        jsonObject.addProperty(Constants.PARAM_ID, id)
+        jsonObject.addProperty(Constants.PARAM_TYPE, type)
+        val jsonArray = JsonArray()
+        choices?.forEach { jsonArray.add(it.toJsonObject()) }
+        jsonObject.add(Constants.PARAM_CHOICES, jsonArray)
+        jsonObject.addProperty(PARAM_CONDITION, condition)
+        jsonObject.add(PARAM_PARAMETERS, parameters)
+        return jsonObject
     }
 }

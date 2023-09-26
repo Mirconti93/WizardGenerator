@@ -3,6 +3,7 @@ package com.gridspertise.ami.surftutor.data.models
 import com.google.gson.JsonObject
 
 data class TaskRemoteCallStateModel(
+    override val id: String,
     override val type: String,
     // l'id del prossimo stato
     val next: String?,
@@ -41,5 +42,9 @@ data class TaskRemoteCallStateModel(
 
     override fun stayOnScreen(): Boolean {
         return sameRoute == true
+    }
+
+    override fun toJsonObject(): JsonObject {
+        TODO("Not yet implemented")
     }
 }

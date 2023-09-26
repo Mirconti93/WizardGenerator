@@ -3,6 +3,7 @@ package com.gridspertise.ami.surftutor.data.models
 import com.google.gson.JsonObject
 
 data class TaskStateModel(
+    override val id: String,
     override val type: String,
     val next: String?,
     // viene passato il nome del metodo (senza parametri). I metodi disponibili vengono chiamati nella classe TaskHandler.kt
@@ -40,5 +41,9 @@ data class TaskStateModel(
 
     override fun stayOnScreen(): Boolean {
         return sameRoute == true
+    }
+
+    override fun toJsonObject(): JsonObject {
+        TODO("Not yet implemented")
     }
 }

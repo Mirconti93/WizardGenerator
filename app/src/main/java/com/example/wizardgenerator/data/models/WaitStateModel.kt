@@ -3,6 +3,7 @@ package com.gridspertise.ami.surftutor.data.models
 import com.google.gson.JsonObject
 
 data class WaitStateModel(
+    override val id: String,
     override val type: String,
     val next: String?,
     val seconds: String?,
@@ -30,5 +31,9 @@ data class WaitStateModel(
 
     override fun stayOnScreen(): Boolean {
         return true
+    }
+
+    override fun toJsonObject(): JsonObject {
+        TODO("Not yet implemented")
     }
 }

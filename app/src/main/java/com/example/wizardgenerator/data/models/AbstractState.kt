@@ -1,10 +1,10 @@
 package com.gridspertise.ami.surftutor.data.models
-
 import com.google.gson.JsonObject
 import kotlinx.serialization.Serializable
 
 @Serializable
 abstract class AbstractState {
+    abstract val id: String
     // il tipo di stato, in base al quale si possono gestire diverse implementazioni e hanno differenti parametri aggiuntivi.
     abstract val type: String
     val title: String? = null
@@ -28,4 +28,6 @@ abstract class AbstractState {
 
     // indica se bisogna eseguire le operazione dello stato nella stessa schermata
     abstract fun stayOnScreen(): Boolean
+
+    abstract fun toJsonObject(): JsonObject
 }
