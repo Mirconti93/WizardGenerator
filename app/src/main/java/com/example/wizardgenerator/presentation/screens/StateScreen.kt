@@ -10,8 +10,12 @@ import com.example.wizardgenerator.presentation.MainViewModel
 import com.gridspertise.ami.surftutor.data.models.AslWizard
 
 @Composable
-fun WizardScreen(mainViewModel: MainViewModel) {
+fun StateScreen(mainViewModel: MainViewModel) {
     Text(WizardApplication.instance.getString(R.string.edit_wizard))
-
+    LazyColumn {
+        items(mainViewModel.repository.getWizards()) {
+            WizardCard(it)
+        }
+    }
 }
 
