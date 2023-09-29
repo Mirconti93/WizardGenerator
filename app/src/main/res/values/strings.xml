@@ -7,7 +7,6 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="lorem_ipsum">
-
-    </string>
+    <string name="wizard_empty">There aren\'t wizard yet.\nAdd new one</string>
+    <string name="settings">Settings</string>
 </resources>

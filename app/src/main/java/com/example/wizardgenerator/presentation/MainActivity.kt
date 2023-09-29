@@ -3,7 +3,6 @@ package com.example.wizardgenerator.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -21,10 +20,10 @@ import androidx.navigation.compose.rememberNavController
 import com.example.wizardgenerator.R
 import com.mircontapp.sportalbum.presentation.navigation.NavGraph
 import com.mircontapp.sportalbum.presentation.ui.theme.WizardTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    val mainViewModel: MainViewModel by viewModels()
 
     @ExperimentalMaterial3Api
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +62,7 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        NavGraph(navController, mainViewModel)
+                        NavGraph(navController)
                     }
                 }
             }
