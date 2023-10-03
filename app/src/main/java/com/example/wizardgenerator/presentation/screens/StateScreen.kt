@@ -15,7 +15,7 @@ fun StateScreen() {
 
     Text(WizardApplication.instance.getString(R.string.edit_wizard))
     LazyColumn {
-        items(mainViewModel.repository.getWizards()) {
+        items(mainViewModel.getWizards()) {
             WizardCard(it)
         }
     }

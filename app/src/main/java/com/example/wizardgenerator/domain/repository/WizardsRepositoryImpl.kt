@@ -7,7 +7,7 @@ import com.gridspertise.ami.surftutor.data.models.AslWizard
 class WizardsRepositoryImpl: WizardsRepository {
     var wizards: MutableList<AslWizard> = ArrayList()
 
-    override fun getWizards(): List<AslWizard> {
+    override fun getWizardList(): List<AslWizard> {
         return wizards
     }
     override fun addWizard(aslWizard: AslWizard) {

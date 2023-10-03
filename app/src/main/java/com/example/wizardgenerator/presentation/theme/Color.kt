@@ -1,11 +1,12 @@
-package com.mircontapp.sportalbum.presentation.ui.theme
+package com.example.wizardgenerator.presentation.theme
 
 import androidx.compose.ui.graphics.Color
+import com.example.wizardgenerator.R
 
-val DarkBlueD = Color(0xFF00072D)
-val BlueD = Color(0xFF0001C55)
+val DarkGreen = Color(0xFF283420)
 val OrangeYellowD = Color(0xFFFFC300)
-val YellowD = Color(0xFFFFD60A)
+val Yellow = Color(0xFFFFD60A)
+val Green = Color(0xFFB9F396)
 
 val DarkBlueL = Color(0xFF001D3D)
 val BlueL = Color(0xFF003566)

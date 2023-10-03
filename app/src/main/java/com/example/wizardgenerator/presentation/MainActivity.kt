@@ -1,5 +1,6 @@
 package com.example.wizardgenerator.presentation
 
+import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,14 +9,18 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.wizardgenerator.R
 import com.mircontapp.sportalbum.presentation.navigation.NavGraph
@@ -46,10 +51,12 @@ class MainActivity : ComponentActivity() {
                         BottomAppBar {  }
                     },
                     floatingActionButton = {
-                        FloatingActionButton(onClick = {
+                        FloatingActionButton(
+                            onClick = {
 
-                        },) {
-
+                            },
+                        ) {
+                            Icon(Icons.Filled.Add,"")
                         }
                     }
 
@@ -57,9 +64,9 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier
                             .padding(innerPadding)
+                            .padding(8.dp)
                             .fillMaxWidth()
                             .fillMaxHeight(),
-                        verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         NavGraph(navController)

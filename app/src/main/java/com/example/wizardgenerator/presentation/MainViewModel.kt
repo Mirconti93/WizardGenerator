@@ -17,7 +17,20 @@ class MainViewModel @Inject constructor(): ViewModel() {
     @Inject lateinit var repository: WizardsRepository
 
     fun isWizardListEmpty(): Boolean {
-        return repository.getWizards().isEmpty()
+        return repository.getWizardList().isEmpty()
     }
+
+    fun addWizard(aslWizard: AslWizard) {
+        repository.addWizard(aslWizard)
+    }
+
+    fun getWizards() : List<AslWizard> {
+        return repository.getWizardList()
+    }
+
+    fun addStateToWizard(state: AbstractState, idWizard: String) {
+        repository.addStateToWizard(state, idWizard)
+    }
+
 
 }

@@ -5,9 +5,8 @@ import com.gridspertise.ami.surftutor.data.models.AslWizard
 
 interface WizardsRepository {
 
-    fun getWizards(): List<AslWizard>
+    fun getWizardList(): List<AslWizard>
     fun addWizard(aslWizard: AslWizard)
-
     fun addStateToWizard(state: AbstractState, idWizard: String)
 
 }
